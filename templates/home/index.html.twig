@@ -1,47 +1,27 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ODSfera</title>
+{% extends 'base.html.twig' %}
 
-  {% block stylesheets %}
-     <link href="/css/index.css" rel="stylesheet">
-  {% endblock %}
+{% block title %}Inicio · ODSfera{% endblock %}
 
-  <meta name="description" content="ODSfera: comunidad para compartir ideas, eventos e iniciativas alineadas con la Agenda 2030." />
-  </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Ir a inicio">
-      <span class="brand-mark" aria-hidden="true">🌍🏠</span>
-      <span class="brand-name">ODSfera</span>
-    </a>
-
-    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰</button>
-    <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
-      <a href="#home" data-link>Inicio</a>
-      <a href="#resources" data-link>Recursos</a>
-      <a href="#contact" data-link>Contacto</a>
-      <a href="#faq" data-link>FAQ</a>
-      <a href="#faq" data-link>About us</a>
-    </nav>
-  </header>
-
-  <main id="app" tabindex="-1">
-    <!-- Las vistas se renderizan aquí por JS -->
-  </main>
-
-  <footer class="site-footer">
-    <p>© <span id="year"></span> ODSfera · 
-      <a href="#" aria-disabled="true">Privacidad</a> · 
-      <a href="#" aria-disabled="true">Términos</a>
-    </p>
-  </footer>
-
-  {% block javascripts %}
-  <script src="/js/index.js" defer></script>
+{% block stylesheets %}
+  {{ parent() }}
+  {# Si quieres agregar estilos adicionales específicos para esta página, hazlo aquí #}
+  <link href="/css/home.css" rel="stylesheet">
 {% endblock %}
 
-</body>
-</html>
+{% block body %}
+  <section id="home" class="home-section">
+    <h1>Bienvenido a ODSfera</h1>
+    <p>ODSfera es una comunidad para compartir ideas, eventos e iniciativas alineadas con la Agenda 2030.</p>
+
+    <div class="home-content">
+      <p>Explora recursos, conoce proyectos inspiradores y participa en la transformación hacia un futuro sostenible.</p>
+      <a href="#resources" class="btn-primary">Ver recursos</a>
+    </div>
+  </section>
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  {# Si tienes scripts específicos para esta página, agrégalos aquí #}
+  <script src="/js/home.js" defer></script>
+{% endblock %}
