@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contacto · ODSfera{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  {# Si quieres agregar estilos adicionales específicos para esta página, hazlo aquí #}
+  <link href="/css/home.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}  {# Aqui es el que em de cambiar #}
+  <section id="contact" class="contact-section">
+    <h1>Bienvenido a ODSfera</h1>
+    <p>¿Tienes dudas, propuestas o quieres colaborar en algún proyecto relacionado con los ODS?
+    Estamos aquí para escucharte.</p>
+
+    <div class="contact-info">
+    <h2>Cómo podemos ayudarte</h2>
+    <ul>
+      <li>Orientación para publicar tu idea, evento o iniciativa.</li>
+      <li>Colaboraciones con asociaciones, escuelas o entidades locales.</li>
+      <li>Consultas sobre sostenibilidad, impacto y participación ciudadana.</li>
+      <li>Soporte técnico sobre el uso de la plataforma.</li>
+    </ul>
+  </div>
+
+  <form class="contact-form" method="post" action="">
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input id="name" name="name" required placeholder="Tu nombre">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo electrónico</label>
+      <input id="email" name="email" type="email" required placeholder="tucorreo@ejemplo.com">
+    </div>
+
+    <div class="form-group">
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" required placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary">Enviar</button>
+  </form>
+
+  <div class="contact-extra">
+    <h2>También puedes encontrarnos en</h2>
+    <p>Email: <a href="mailto:contacto@odsfera.org">contacto@odsfera.org</a></p>
+    <p>Instagram: <a href="https://instagram.com/odsfera" target="_blank">@odsfera</a></p>
+  </div>
+</section>
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  {# Si tienes scripts específicos para esta página, agrégalos aquí #}
+  <script src="/js/home.js" defer></script>
+{% endblock %}
